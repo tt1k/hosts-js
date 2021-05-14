@@ -1,15 +1,13 @@
 {
-  "name": "github-host",
-  "version": "1.0.0",
-  "description": "auto update github host",
+  "name": "hosts-js",
   "main": "main.js",
+  "license": "MIT",
   "scripts": {
     "make": "node ./main.js"
   },
-  "author": "FakeCoder",
-  "license": "ISC",
   "dependencies": {
     "cheerio": "^1.0.0-rc.9",
-    "dayjs": "^1.10.4"
+    "dayjs": "^1.10.4",
+    "node-fetch": "^2.6.1"
   }
 }
