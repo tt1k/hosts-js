@@ -1,5 +1,5 @@
 # hosts-js
-host-js is a concise version of [hosts](https://github.com/ineo6/hosts)
+hosts-js is a concise version of [hosts](https://github.com/ineo6/hosts)
 ## hosts
 update at: 2021-05-14 16:49:24
 ```shell
