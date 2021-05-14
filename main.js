@@ -99,8 +99,8 @@ async function acquireGithubHosts() {
 
   try {
     const updateTime = dayjs().tz('Asia/Shanghai').format('YYYY-MM-DD HH:mm:ss');
-    const readmeTemplate = "# hosts-js\nhost-js is a concise version of [hosts](https://github.com/ineo6/hosts)\n## hosts\nupdate at: {update_time}\n```shell\n{host-content}```\n## license\n[MIT](LICENSE)";
-    let content = readmeTemplate.replace('{host-content}', hostsContent).replace('{update_time}', updateTime);
+    const readmeTemplate = "# hosts-js\nhost-js is a concise version of [hosts](https://github.com/ineo6/hosts)\n## hosts\nupdate at: {update_time}\n```shell\n{host_content}```\n## license\n[MIT](LICENSE)";
+    let content = readmeTemplate.replace('{host_content}', hostsContent).replace('{update_time}', updateTime);
     const readmePath = path.join('./', 'README.md');
     fs.writeFileSync(readmePath, content);
   } catch (err) {
