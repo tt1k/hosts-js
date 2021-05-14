@@ -1,7 +1,7 @@
 # hosts-js
 host-js is a concise version of [hosts](https://github.com/ineo6/hosts)
 ## hosts
-update at: 2021-05-14 17:44:02
+update at: 2021-05-14 17:47:32
 ```shell
 185.199.108.154              github.githubassets.com
 140.82.113.21                central.github.com
