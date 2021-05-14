@@ -16,8 +16,32 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm run make
+      
+      - name: Install dependencies
+        run: npm install
+      
+      - name: Update hosts
+        run: npm run make
+      
+      - name: Commit changes
+        id: commit
+        run: |
+          git config --global user.email icedotaku.dev@gmail.com
+          git config --global user.name FakeCoder
+          git add .
+          git commit -m "Update hosts"
+        continue-on-error: true
+
+      - name: Process failures
+        if: steps.commit.outputs.status == 'failure'
+        run: exit 1
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.COMMIT_TOKEN }}
